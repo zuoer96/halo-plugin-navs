@@ -1,0 +1,37 @@
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name: role-template-nav-view
+  labels:
+    halo.run/role-template: "true"
+  annotations:
+    rbac.authorization.halo.run/module: "Nav Management"
+    rbac.authorization.halo.run/display-name: "导航查看"
+    rbac.authorization.halo.run/ui-permissions: |
+      ["plugin:navs:view"]
+rules:
+  - apiGroups: [ "core.halo.run" ]
+    resources: [ "navs", "navgroups" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "api.plugin.halo.run" ]
+    resources: [ "plugins/navs" ]
+    resourceNames: [ "PluginNavs" ]
+    verbs: [ "get", "list" ]
+---
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name: role-template-nav-manage
+  labels:
+    halo.run/role-template: "true"
+  annotations:
+    rbac.authorization.halo.run/module: "Nav Management"
+    rbac.authorization.halo.run/display-name: "导航管理"
+    rbac.authorization.halo.run/ui-permissions: |
+      ["plugin:navs:manage"]
+    rbac.authorization.halo.run/dependencies: |
+      ["role-template-nav-view"]
+rules:
+  - apiGroups: [ "core.halo.run" ]
+    resources: [ "navs", "navgroups" ]
+    verbs: [ "create", "patch", "update", "delete", "deletecollection" ]

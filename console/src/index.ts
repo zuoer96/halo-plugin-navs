@@ -1,7 +1,9 @@
+import "./styles/tailwind.css";
+import "./styles/index.css";
 import { definePlugin } from "@halo-dev/console-shared";
-import HomeView from "./views/HomeView.vue";
-import { IconPlug } from "@halo-dev/components";
+import NavList from "@/views/NavList.vue";
 import { markRaw } from "vue";
+import RiNavsLine from "~icons/ri/links-line";
 
 export default definePlugin({
   components: {},
@@ -9,21 +11,24 @@ export default definePlugin({
     {
       parentName: "Root",
       route: {
-        path: "/example",
-        name: "Example",
-        component: HomeView,
+        path: "/navs",
+        name: "Navs",
+        component: NavList,
         meta: {
-          title: "示例页面",
-          searchable: true,
+          permissions: ["plugin:navs:view"],
+          // title: "导航功能",//菜单页的浏览器 tab 标题
+          // 插件对应菜单的位置
           menu: {
-            name: "示例页面",
-            group: "示例分组",
-            icon: markRaw(IconPlug),
-            priority: 0,
+            name: "导航", // 菜单显示名
+            group: "content", // 所在组名
+            icon: markRaw(RiNavsLine),
+            // priority: 0, 权重
           },
+          
         },
+        
       },
-    },
+      
+    }, 
   ],
-  extensionPoints: {},
 });

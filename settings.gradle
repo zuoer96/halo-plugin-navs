@@ -1,7 +1,9 @@
 pluginManagement {
     repositories {
+//        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots' }
         gradlePluginPortal()
     }
 }
-rootProject.name = 'plugin-starter'
+// 插件的名字
+rootProject.name = 'halo-plugin-navs'
 

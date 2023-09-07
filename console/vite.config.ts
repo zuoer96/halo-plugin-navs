@@ -5,9 +5,6 @@ import Vue from "@vitejs/plugin-vue";
 import VueJsx from "@vitejs/plugin-vue-jsx";
 import Icons from "unplugin-icons/vite";
 
-const pluginEntryName = "PluginStarter";
-
-// https://vitejs.dev/config/
 export default ({ mode }: { mode: string }) => {
   const isProduction = mode === "production";
   const outDir = isProduction
@@ -29,7 +26,8 @@ export default ({ mode }: { mode: string }) => {
       emptyOutDir: true,
       lib: {
         entry: "src/index.ts",
-        name: pluginEntryName,
+        // 插件的名字！用来标识console属于哪个插件，要和src的plugin.yaml中的插件名对应
+        name: "PluginNavs",
         formats: ["iife"],
         fileName: () => "main.js",
       },
@@ -53,7 +51,6 @@ export default ({ mode }: { mode: string }) => {
             "@halo-dev/console-shared": "HaloConsoleShared",
             "@halo-dev/components": "HaloComponents",
           },
-          extend: true,
         },
       },
     },

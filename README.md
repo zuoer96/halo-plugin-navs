@@ -43,3 +43,5 @@ halo:
     fixedPluginPath:
       - "/path/to/plugin-starter"
 ```
+
+swagger接口：http://localhost:8090/webjars/swagger-ui/index.html

@@ -1,0 +1,18 @@
+.fade-enter-active {
+  @apply navs-duration-200 navs-ease-out;
+}
+.fade-enter-from {
+  @apply navs-opacity-0;
+}
+.fade-enter-to {
+  @apply navs-opacity-100;
+}
+.fade-leave-active {
+  @apply navs-duration-200 navs-ease-in;
+}
+.fade-leave-from {
+  @apply navs-opacity-100;
+}
+.fade-leave-to {
+  @apply navs-opacity-0;
+}
