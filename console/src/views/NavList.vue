@@ -425,9 +425,6 @@ async function handleMove(nav: Nav, group: NavGroup) {
                   v-permission="['plugin:navs:manage']"
                   class="navs-mt-4 navs-flex sm:navs-mt-0"
                 >
-                  <VButton :route="{ name: 'NavCategories' }" size="sm">
-                    分类
-                  </VButton>
                   <VButton size="xs" @click="editingModal = true">
                     新建
                   </VButton>
