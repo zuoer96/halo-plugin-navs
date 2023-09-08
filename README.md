@@ -1,21 +1,19 @@
-# plugin-starter
+# plugin-navs
 
-Halo 2.0 插件开发快速开始模板。
+Halo 2.0 的导航管理插件，halo-theme-webstack依赖它。
 
 ## 开发环境
 
-插件开发的详细文档请查阅：<https://docs.halo.run/developer-guide/plugin/hello-world>
-
 ```bash
-git clone git@github.com:halo-sigs/plugin-starter.git
+git clone git@github.com:zuoer96/halo-plugin-navs.git
 
 # 或者当你 fork 之后
 
-git clone git@github.com:{your_github_id}/plugin-starter.git
+git clone git@github.com:{your_github_id}/halo-plugin-navs.git
 ```
 
 ```bash
-cd path/to/plugin-starter
+cd path/to/halo-plugin-navs
 ```
 
 ```bash
@@ -41,7 +39,6 @@ halo:
   plugin:
     runtime-mode: development
     fixedPluginPath:
-      - "/path/to/plugin-starter"
+      - "/path/to/halo-plugin-navs"
 ```
 
-swagger接口：http://localhost:8090/webjars/swagger-ui/index.html
