@@ -4,6 +4,7 @@ import { definePlugin } from "@halo-dev/console-shared";
 import NavList from "@/views/NavList.vue";
 import { markRaw } from "vue";
 import RiNavsLine from "~icons/ri/links-line";
+import IonIosPaperPlane from '~icons/ion/ios-paper-plane'
 
 export default definePlugin({
   components: {},
@@ -21,7 +22,7 @@ export default definePlugin({
           menu: {
             name: "导航", // 菜单显示名
             group: "content", // 所在组名
-            icon: markRaw(RiNavsLine),
+            icon: markRaw(IonIosPaperPlane),
             // priority: 0, 权重
           },
           
